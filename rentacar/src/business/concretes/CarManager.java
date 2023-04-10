@@ -41,8 +41,8 @@ public class CarManager implements CarService {
 
     @Override
     public boolean validate(int id) {
-        var x = carDao.getAll().stream().anyMatch(car -> car.getId() == id);
-        if(x == true){
+        var carIdCheck = carDao.getAll().stream().anyMatch(car -> car.getId() == id);
+        if(carIdCheck == true){
             System.out.println("Bu id zaten var!" + " " + id);
             return false;
         }
